@@ -1,0 +1,67 @@
+import pandas as pd
+import os
+import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+import scienceplots
+plt.style.use(['science','nature'])
+from matplotlib.backends.backend_pdf import PdfPages
+
+
+root = '../data/18650_procress/'
+
+files = os.listdir(root)
+fig, ax = plt.subplots(figsize=(4, 2), dpi=400)
+colors = ['#80A6E2',
+          '#7BDFF2',
+          '#FBDD85',
+          '#F46F43',
+          '#403990',
+          '#CF3D3E']
+markers = ['o', 'v', 'D', 'p', 's', '^']
+legends = ['25 °C', '-10 °C', '-15 °C', '-20 °C', '-25 °C', '-30 °C']
+batches = ['P25', 'N10', 'N15', 'N20', 'N25', 'N30']
+line_width = 1.0
+
+voltage_min, voltage_max = float('inf'), float('-inf')
+
+for i in range(6):
+    for f in files:
+        if batches[i] in f:
+            try:
+                path = os.path.join(root, f)
+                data = pd.read_csv(path)
+                time = data['time'].values
+                voltage = data['voltage'].values
+                ax.plot(time[1:],
+                        voltage[1:],
+                        color=colors[i], alpha=1, linewidth=line_width,
+                        marker=markers[i], markersize=2, markevery=50)
+
+                # renew voltage range
+                voltage_min = min(voltage_min, min(voltage[1:]))
+                voltage_max = max(voltage_max, max(voltage[1:]))
+            except Exception as e:
+                print(f"Error processing {f}: {e}")
+
+custom_lines = [
+    Line2D([0], [0], color='#80A6E2', marker='o', markersize=2.5, linewidth=1.0),
+    Line2D([0], [0], color='#7BDFF2', marker='v', markersize=2.5, linewidth=1.0),
+    Line2D([0], [0], color='#FBDD85', marker='D', markersize=2.5, linewidth=1.0),
+    Line2D([0], [0], color='#F46F43', marker='p', markersize=2.5, linewidth=1.0),
+    Line2D([0], [0], color='#403990', marker='s', markersize=2.5, linewidth=1.0),
+    Line2D([0], [0], color='#CF3D3E', marker='^', markersize=2.5, linewidth=1.0)
+]
+
+ax.set_xlabel('Time')
+ax.set_ylabel('Voltage (V)')
+ax.legend(custom_lines, legends, loc='upper right', bbox_to_anchor=(1.0, 1), frameon=False, ncol=3, fontsize=6)
+
+# 调整电压范围到合适的最小最大范围
+ax.set_ylim([voltage_min - 0.1, voltage_max + 0.1])
+plt.tight_layout()
+plt.show()
+
+# 保存代码看起来被注释掉了，根据需要调整保存路径和保存方式
+# with PdfPages("output.pdf") as pdf:
+#     pdf.savefig(fig)
+# plt.savefig('xjtu_trajectory.svg', format='svg')
