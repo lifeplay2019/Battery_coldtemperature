@@ -30,10 +30,9 @@ for i in range(6):
             try:
                 path = os.path.join(root, f)
                 data = pd.read_csv(path)
-                time = data['time'].values
+                capacity = data['capacity'].values
                 voltage = data['voltage'].values
-                ax.plot(time[1:],
-                        voltage[1:],
+                ax.plot(voltage[1:],capacity[1:],
                         color=colors[i], alpha=1, linewidth=line_width,
                         marker=markers[i], markersize=2, markevery=50)
 
@@ -52,12 +51,12 @@ custom_lines = [
     Line2D([0], [0], color='#CF3D3E', marker='^', markersize=1.5, linewidth=0.7)
 ]
 
-ax.set_xlabel('Time (s)')
-ax.set_ylabel('Voltage (V)')
-ax.legend(custom_lines, legends, loc='upper right', bbox_to_anchor=(1.0, 1), frameon=False, ncol=3, fontsize=6)
+ax.set_ylabel('Capacity')
+ax.set_xlabel('Voltage (V)')
+ax.legend(custom_lines, legends, loc='lower right', bbox_to_anchor=(1.0, 1), frameon=False, ncol=3, fontsize=6)
 
 # Adjust the voltage range to the appropriate min-max range
-ax.set_ylim([voltage_min - 0.1, voltage_max + 0.1])
+ax.set_xlim([voltage_min - 0.1, voltage_max + 0.1])
 plt.tight_layout()
 plt.show()
 
