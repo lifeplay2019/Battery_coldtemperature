@@ -7,7 +7,7 @@ plt.style.use(['science','nature'])
 from matplotlib.backends.backend_pdf import PdfPages
 
 
-root = '../data/18650_procress_added/'
+root = '../data/efset18650_procress/'
 
 files = os.listdir(root)
 fig, ax = plt.subplots(figsize=(4, 2), dpi=200)
@@ -53,13 +53,14 @@ custom_lines = [
 ]
 
 
-ax.set_title('Fitorch 18650 Voltage vs Time')
+ax.set_title('Efset 18650 Voltage vs Time')
+# ax.set_title('Fitorch 18650 Voltage vs Time')
 ax.set_xlabel('Time (s)')
 ax.set_ylabel('Voltage (V)')
 ax.legend(custom_lines, legends, loc='upper right', bbox_to_anchor=(1.0, 1), frameon=False, ncol=3, fontsize=6)
 
 # Adjust the voltage range to the appropriate min-max range
-ax.set_ylim([voltage_min - 0.1, voltage_max + 0.6])
+ax.set_ylim([voltage_min - 0.1, voltage_max + 0.4])
 plt.tight_layout()
 plt.show()
 
