@@ -1,3 +1,6 @@
+# this is the plot for the battery conductivity vs temperature by using pybamm (math electrochemical )
+# Not yet finish.
+
 import pybamm
 import matplotlib.pyplot as plt
 

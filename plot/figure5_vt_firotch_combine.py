@@ -48,12 +48,11 @@ for idx, root in enumerate(roots):
     axes[idx].set_ylim([voltage_min - 0.1, voltage_max + 0.6])
 
 plt.subplots_adjust(hspace=0.4)
-# 显示图表
 plt.show()
 
-# # 保存图表为PDF
+# Save as pdf
 # with PdfPages("combined_output.pdf") as pdf:
 #     pdf.savefig(fig)
 #
-# # 保存图表为SVG
+#  save as SVG
 # plt.savefig('combined_output.svg', format='svg')

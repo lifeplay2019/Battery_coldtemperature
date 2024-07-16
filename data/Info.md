@@ -1,15 +1,17 @@
 # Battery test information
-This battery is test from 2024/07/05 to 2024/07/11
+This battery is test from 2024/07/05 to ...
 
-The battery type is Fitorch Battery and IMR Battery
+The battery type is Fitorch Battery and IMR Efset Battery
 
 ## File Name
 For example: 18650_-30_dc_1.xlsx
 
-18650: Battery Type\
--30: Temperature while doing the cycle\
-dc: cycle of discharging\
-_1: the selected cycle used for the tested.
+18650:  Battery Type\
+-30:    Temperature while doing the cycle\
+dc:     cycle of discharging\
+_1:     the selected cycle used for the tested.\
+N10:    negative 10 degree celsius\
+P25:    sample for the room temperature -- positive 25 degree celsius 
 
 * All the rest of the data has been storage in the PC for future test.
 
@@ -27,17 +29,82 @@ Charge current: 3.400 A\
 Charge voltage: 4.250 V\
 Rated capacity: 3400 Ah\
 Nominal Voltage: 4.2 V\
-Load current: 3.394 A\
 Cut-off voltage: 2.500 V
 
 
 
 
 #### Fitorch 26650
-* 25 degree: done for 10 cycle (2024/07/10 - 07/11)
-* -10 degree: done for 2 cycle (2024/07/11)
-* -15 degree: 
-* -20 degree: 
-* -25 degree: 
-* -30 degree: 
+* 25 degree: done for 10 cycle 
+* -10 degree: done for 2 cycle 
+* -15 degree: done for 2 cycle 
+* -20 degree: done for 6 cycle
+* -25 degree: done for 2 cycle
+* -30 degree: done for 10 cycle
 
+This battery discharge as 1C rate.\
+Charge current: 4.000 A\
+Charge voltage: 4.250 V\
+Rated capacity: 4500 Ah\
+Nominal Voltage: 4.2 V\
+Cut-off voltage: 2.500 V
+
+#### Fitorch 21700
+* 25 degree: done for  cycle 
+* -10 degree: done for  cycle 
+* -15 degree: done for  cycle 
+* -20 degree: done for  cycle
+* -25 degree: done for  cycle
+* -30 degree: done for  cycle
+
+This battery discharge as 1C rate.\
+Charge current:  A\
+Charge voltage:  V\
+Rated capacity:  Ah\
+Nominal Voltage:  V\
+Cut-off voltage: 2.500 V
+
+#### Efset 18650
+* 25 degree: done for 8 cycle 
+* -10 degree: done for 10 cycle 
+* -15 degree: done for 3 cycle 
+* -20 degree: done for 4 cycle
+* -25 degree: done for 2 cycle
+* -30 degree: done for 2 cycle
+
+This battery discharge as 1C rate.\
+Charge current: 3.000 A\
+Charge voltage: 4.250 V\
+Rated capacity: 3000 Ah\
+Nominal Voltage: 4.2 V\
+Cut-off voltage: 2.500 V
+
+#### Efset 26650
+* 25 degree: done for 8 cycle 
+* -10 degree: done for  cycle 
+* -15 degree: done for  cycle 
+* -20 degree: done for  cycle
+* -25 degree: done for  cycle
+* -30 degree: done for  cycle
+
+This battery discharge as 1C rate.\
+Charge current:  A\
+Charge voltage:  V\
+Rated capacity:  Ah\
+Nominal Voltage:  V\
+Cut-off voltage: 2.500 V
+
+#### Efset 21700
+* 25 degree: done for  cycle 
+* -10 degree: done for  cycle 
+* -15 degree: done for  cycle 
+* -20 degree: done for  cycle
+* -25 degree: done for  cycle
+* -30 degree: done for  cycle
+
+This battery discharge as 1C rate.\
+Charge current:  A\
+Charge voltage:  V\
+Rated capacity:  Ah\
+Nominal Voltage:  V\
+Cut-off voltage: 2.500 V
