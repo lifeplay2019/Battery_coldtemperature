@@ -26,10 +26,10 @@ for i, batch in enumerate(batches):
                 path = os.path.join(root, f)
                 data = pd.read_csv(path)
                 temperature = data['temperature'].values
-                IR = data['IR'].values
-                all_IR_values.update(IR)  # Collect all IR values
+                Pr = data['Pr'].values
+                all_IR_values.update(Pr)  # Collect all Percentage values
 
-                ax.plot(temperature, IR, color=colors[i], alpha=1,
+                ax.plot(temperature, Pr, color=colors[i], alpha=1,
                         linewidth=line_width, marker=markers[i],
                         markersize=2, markevery=1)
             except Exception as e:
@@ -44,27 +44,27 @@ custom_lines = [
 
 
 # Customizing ticks
-interval = np.percentile(list(all_IR_values), 75) - np.percentile(list(all_IR_values), 25)
-tick_frequency = interval /2  # Adjust frequency as necessary
-min_ir, max_ir = min(all_IR_values), max(all_IR_values)
-ticks = np.arange(min_ir, max_ir + tick_frequency, tick_frequency)
-ax.set_yticks(ticks)
+# interval = np.percentile(list(all_IR_values), 75) - np.percentile(list(all_IR_values), 25)
+# tick_frequency = interval   # Adjust frequency as necessary
+# min_ir, max_ir = min(all_IR_values), max(all_IR_values)
+# ticks = np.arange(min_ir, max_ir + tick_frequency, tick_frequency)
+# ax.set_yticks(ticks)
 specific_xticks = [-30, -25, -20, -15, -10, 0, 25]
 ax.set_xticks(specific_xticks)
 ax.set_xticklabels([str(x) for x in specific_xticks])  # Ensuring the labels are what we expect
 
 # Rotating tick labels
 plt.xticks(fontsize=5)
-plt.yticks(rotation=45)  # Rotate labels to prevent overlap
+plt.yticks(rotation = 0, fontsize = 5)  # Rotate labels to prevent overlap
 
-ax.set_title('Fitorch Internal Resistance vs Temperature', fontsize=8)
+ax.set_title('Fitorch Capacity Percentage vs Temperature', fontsize=8)
 ax.set_xlabel(r'Temperature ($^\circ$C)', fontsize=5)
-ax.set_ylabel(r'Internal Resistance ($\Omega$)', fontsize=5)
+ax.set_ylabel(r'Capacity Percentage (%)', fontsize=5)
 
 plt.xticks(fontsize=5)
 plt.yticks(fontsize=5)  # Adjust font size as needed
 
-ax.legend(custom_lines, legends, loc='upper right', bbox_to_anchor=(1.0, 1), frameon=False, ncol=1, fontsize=6)
+ax.legend(custom_lines, legends, loc='lower right', bbox_to_anchor=(1, 0), frameon=False, ncol=1, fontsize=6)
 
 plt.tight_layout()
 plt.show()

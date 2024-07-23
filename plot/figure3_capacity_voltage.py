@@ -56,11 +56,7 @@ ax.set_xlabel('Voltage (V)')
 ax.legend(custom_lines, legends, loc='lower right', bbox_to_anchor=(1.0, 1), frameon=False, ncol=3, fontsize=6)
 
 # Adjust the voltage range to the appropriate min-max range
-ax.set_xlim([voltage_min - 0.1, voltage_max + 0.1])
+# ax.set_xlim([voltage_min - 0.1, voltage_max + 0.1])
 plt.tight_layout()
 plt.show()
 
-# Save the picture
-# with PdfPages("output.pdf") as pdf:
-#     pdf.savefig(fig)
-# plt.savefig('what ever you name.svg', format='svg')

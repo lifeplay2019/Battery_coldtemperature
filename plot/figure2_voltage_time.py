@@ -7,7 +7,8 @@ plt.style.use(['science','nature'])
 from matplotlib.backends.backend_pdf import PdfPages
 
 
-root = '../data/efset18650_procress/'
+# root = '../data/efset18650_procress/'
+root = '../data/21700_procress/'
 
 files = os.listdir(root)
 fig, ax = plt.subplots(figsize=(4, 2), dpi=200)
@@ -53,7 +54,8 @@ custom_lines = [
 ]
 
 
-ax.set_title('Efset 18650 Voltage vs Time')
+# ax.set_title('Efset 18650 Voltage vs Time')
+ax.set_title('Fitorch 21700 Voltage vs Time')
 # ax.set_title('Fitorch 18650 Voltage vs Time')
 ax.set_xlabel('Time (s)')
 ax.set_ylabel('Voltage (V)')
