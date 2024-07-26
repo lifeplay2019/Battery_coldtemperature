@@ -27,6 +27,6 @@ def hex_to_decimal(hex_color):
     return (red_decimal_normalized, green_decimal_normalized, blue_decimal_normalized)
 
 # test
-hex_color = "#F7C97E"
+hex_color = "#5F97D2"
 result = hex_to_decimal(hex_color)
 print(result)
