@@ -15,6 +15,24 @@ P25:    sample for the room temperature -- positive 25 degree celsius
 
 * All the rest of the data has been storage in the PC for future test.
 
+## File in internal resistance
+
+actuall time:  the reality time grab from the experiment\
+Va:         voltage test at the end of the rest\
+Vdc:        voltage test the start time of discharge\
+Ia:         current test at the end of the rest\
+Idc:        current test the start time of discharge\
+IR:         internal resistance (calculated)\
+Pr:         battery remaining capacity percentage (compare to their nominal capacity)\
+Drop:       battery capacity drop rate (%) comparing with 25 degree as reference\          
+Drop100:    battery capacity drop rate (%) comparing with 100% (nominal capacity)\
+ED:         energy of discharging period (Wh)\
+CE:         the Coulomb Efficiency
+
+
+
+
+
 ### Reminder:
 * the charging voltage usually would not reach as it set to be (For example: nominal voltage is 4.2, we charge at 4.25v usuall it can not reach toward 4.25v.)
 ##### Fitorch 18650
