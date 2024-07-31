@@ -60,7 +60,7 @@ ax.set_xticklabels([str(x) for x in specific_xticks])
 plt.xticks(fontsize=5)
 plt.yticks(rotation = 0, fontsize = 5)  # Rotate labels
 
-ax.set_title('Efset Drop Percentage vs Temperature', fontsize=8)
+ax.set_title('Efest Drop Percentage vs Temperature', fontsize=8)
 ax.set_xlabel(r'Temperature ($^\circ$C)', fontsize=5)
 ax.set_ylabel(r'Drop Percentage (%)', fontsize=5)
 

@@ -25,11 +25,11 @@ roots = ['../data/18650_procress_added/',
          '../data/efset26650_procress'
          ]
 titles = ['Fitorch 18650 Voltage vs Time',
-          'Efset 18650 Voltage vs Time',
+          'Efest 18650 Voltage vs Time',
           'Fitorch 21700 Voltage vs Time',
-          'Efset 21700 Voltage vs Time',
+          'Efest 21700 Voltage vs Time',
           'Fitorch 26650 Voltage vs Time',
-          'Efset 26650 Voltage vs Time'
+          'Efest 26650 Voltage vs Time'
           ]
 
 for idx, root in enumerate(roots):

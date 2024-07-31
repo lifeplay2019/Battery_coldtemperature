@@ -28,6 +28,7 @@ Drop:       battery capacity drop rate (%) comparing with 25 degree as reference
 Drop100:    battery capacity drop rate (%) comparing with 100% (nominal capacity)\
 ED:         energy of discharging period (Wh)\
 CE:         the Coulomb Efficiency
+AVG_D:      average for drop rate capacity (%)
 
 
 

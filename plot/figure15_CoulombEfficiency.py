@@ -11,6 +11,7 @@ fig, ax = plt.subplots(figsize=(5, 3), dpi=200)
 colors = ['#2878B5', '#F8AC8C', '#FF8884']
 markers = ['o', 'v', 'D']
 legends = ['18650F', '21700F', '26650F']
+# legends = ['18650E', '21700E', '26650E']
 line_width = 0.7
 
 all_IR_values = set()
@@ -83,7 +84,7 @@ plt.xticks(fontsize=5)
 plt.yticks(rotation = 0, fontsize = 5)  # Rotate labels
 
 
-ax.set_title('Fitorch Coulombic Efficiency vs Temperature', fontsize=8)
+ax.set_title('Firotch Coulombic Efficiency vs Temperature', fontsize=8)
 ax.set_xlabel(r'Temperature ($^\circ$C)', fontsize=5)
 ax.set_ylabel(r'Coulombic Efficiency', fontsize=5)
 ax.legend(custom_lines, legends, loc='lower right', bbox_to_anchor=(1.0, 0), frameon=False, ncol=1, fontsize=6)

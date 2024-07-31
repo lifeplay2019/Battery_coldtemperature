@@ -57,7 +57,7 @@ ax.set_xticklabels([str(x) for x in specific_xticks])  # Ensuring the labels are
 plt.xticks(fontsize=5)
 plt.yticks(rotation=45)  # Rotate labels to prevent overlap
 
-ax.set_title('Efset Internal Resistance vs Temperature', fontsize=8)
+ax.set_title('Efest Internal Resistance vs Temperature', fontsize=8)
 ax.set_xlabel(r'Temperature ($^\circ$C)', fontsize=5)
 ax.set_ylabel(r'Internal Resistance ($\Omega$)', fontsize=5)
 
