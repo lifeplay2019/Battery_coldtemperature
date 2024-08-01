@@ -10,7 +10,7 @@ voltage = data['voltage']
 current = data['current']
 
 # 创建图表和轴
-fig, ax1 = plt.subplots(figsize=(5, 3), dpi=200)
+fig, ax1 = plt.subplots(figsize=(6, 3), dpi=200)
 
 # 第二个y轴
 ax2 = ax1.twinx()
@@ -38,10 +38,12 @@ ax2.tick_params(axis='y', colors='#96C37D', labelsize=7)  # 右侧刻度颜色�
 ax1.tick_params(axis='x', labelsize=7)   # 设置x轴刻度字体大小
 
 # 在主图中绘制内嵌图
-# axins1 = inset_axes(ax1, "30%", "30%", loc='upper right', borderpad=5)
-# axins1.plot(time, voltage, color='#5F97D2')
-# axins1.set_xlim(100, 500)
-# axins1.set_ylim(3, 4)
+axins1 = inset_axes(ax1, "20%", "20%", loc='upper right', borderpad=1)
+axins1.plot(time, current, color='#96c37D', label='Current')
+axins1.tick_params(axis='y', colors='#96C37D', labelsize=4)
+axins1.tick_params(axis='x', labelsize=4)
+axins1.set_xlim(6900, 7200)
+axins1.set_ylim(-0.1, 0.1)
 #
 # axins2 = inset_axes(ax2, "30%", "30%", loc='lower left', borderpad=5)
 # axins2.plot(time, current, color='#96C37D')
