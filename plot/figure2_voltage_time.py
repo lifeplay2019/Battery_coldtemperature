@@ -7,7 +7,7 @@ plt.style.use(['science','nature'])
 from matplotlib.backends.backend_pdf import PdfPages
 
 
-# root = '../data/efset18650_procress/'
+#root = '../data/efset18650_procress/'
 root = '../data/21700_procress/'
 
 files = os.listdir(root)
@@ -33,8 +33,8 @@ for i in range(6):
                 data = pd.read_csv(path)
                 time = data['time'].values
                 voltage = data['voltage'].values
-                ax.plot(time[0:],
-                        voltage[0:],
+                ax.plot(time[1:],
+                        voltage[1:],
                         color=colors[i], alpha=1, linewidth=line_width,
                         marker=markers[i], markersize=2, markevery=50)
 
