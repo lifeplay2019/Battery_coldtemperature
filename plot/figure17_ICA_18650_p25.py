@@ -11,7 +11,10 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 # root = '../data/18650_procress_added/'
 # root = '../data/21700_procress/'
-root = '../data/26650_procress/'
+# root = '../data/26650_procress/'
+root = '../data/efset26650_procress/'
+
+
 files = os.listdir(root)
 fig, ax = plt.subplots(figsize=(4, 3), dpi=200)
 color_original = '#80A6E2'
