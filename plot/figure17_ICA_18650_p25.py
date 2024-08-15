@@ -9,13 +9,15 @@ import scienceplots
 plt.style.use(['science','nature'])
 from matplotlib.backends.backend_pdf import PdfPages
 
-root = '../data/18650_procress_added/'
+# root = '../data/18650_procress_added/'
+# root = '../data/21700_procress/'
+root = '../data/26650_procress/'
 files = os.listdir(root)
 fig, ax = plt.subplots(figsize=(4, 3), dpi=200)
 color_original = '#80A6E2'
 color_filtered = '#FFA07A'
 markers = ['o']
-batch = 'N30'
+batch = 'P25'
 line_width = 0.7
 
 ICA_min, ICA_max = float('inf'), float('-inf')
@@ -59,7 +61,7 @@ if np.isfinite(ICA_min) and np.isfinite(ICA_max):
 else:
     print("Invalid ICA_min or ICA_max, skipping ylim setting.")
 
-ax.set_title('Fitorch 18650 ICA at -15 °C')
+ax.set_title('Fitorch 21700 ICA at -10 °C')
 ax.set_xlabel('Voltage (V)')
 ax.set_ylabel('dQ/dv (Ah/V)')
 
