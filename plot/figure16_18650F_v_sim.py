@@ -19,7 +19,7 @@ linestyles = ['-', '--']  # Solid and dashed
 
 markers = ['o', 'v']
 legends = ['25 °C', '25_s °C']
-batches = ['P25', '25F_s']
+batches = ['P25', '25F_s1']
 
 line_width = 0.5
 
@@ -31,7 +31,7 @@ for i in range(len(batches)):
                 data = pd.read_csv(path)
                 time = data['time'].values
                 voltage = data['voltage'].values
-                mask = (time >= 0) & (time <= 4000) & (voltage >= 2.5) & (voltage <=4.2)
+                mask = (time >= 0)  & (voltage >= 2.5) & (voltage <=4.2)
                 time_filtered = time[mask]
                 voltage_filtered = voltage[mask]
 
