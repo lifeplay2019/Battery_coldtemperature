@@ -19,7 +19,7 @@ linestyles = ['-', '--']  # Solid and dashed
 
 markers = ['o', 'v']
 legends = ['25 °C', '25_s °C']
-batches = ['P25', '25F_s1']
+batches = ['N30', '25F_s1']
 
 line_width = 0.5
 
@@ -35,7 +35,7 @@ for i in range(len(batches)):
                 time_filtered = time[mask]
                 voltage_filtered = voltage[mask]
 
-                ax.plot(time_filtered[1:], voltage_filtered[1:],
+                ax.plot(time_filtered[0:], voltage_filtered[0:],
                         color=colors[i], linestyle=linestyles[i],
                         alpha=1, linewidth=line_width,
                         marker=markers[i], markersize=2, markevery=50)
