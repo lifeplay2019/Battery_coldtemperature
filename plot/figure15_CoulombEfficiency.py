@@ -10,8 +10,8 @@ fig, ax = plt.subplots(figsize=(5, 3), dpi=200)
 
 colors = ['#2878B5', '#F8AC8C', '#FF8884']
 markers = ['o', 'v', 'D']
-legends = ['18650F', '21700F', '26650F']
-# legends = ['18650E', '21700E', '26650E']
+# legends = ['18650F', '21700F', '26650F']
+legends = ['18650E', '21700E', '26650E']
 line_width = 0.7
 
 all_IR_values = set()
@@ -70,7 +70,7 @@ custom_lines = [
 
 # Set y-ticks and x-ticks
 interval = np.percentile(list(all_IR_values), 75) - np.percentile(list(all_IR_values), 25)
-tick_frequency = interval / 0.5
+tick_frequency = interval / 0.2
 min_ir, max_ir = min(all_IR_values), max(all_IR_values)
 ticks = np.arange(min_ir, max_ir + tick_frequency, tick_frequency)
 ax.set_yticks(ticks)
@@ -84,7 +84,7 @@ plt.xticks(fontsize=5)
 plt.yticks(rotation = 0, fontsize = 5)  # Rotate labels
 
 
-ax.set_title('Firotch Coulombic Efficiency vs Temperature', fontsize=8)
+ax.set_title('Efest Coulombic Efficiency vs Temperature', fontsize=8)
 ax.set_xlabel(r'Temperature ($^\circ$C)', fontsize=5)
 ax.set_ylabel(r'Coulombic Efficiency', fontsize=5)
 ax.legend(custom_lines, legends, loc='lower right', bbox_to_anchor=(1.0, 0), frameon=False, ncol=1, fontsize=6)

@@ -2,6 +2,7 @@ import pandas as pd
 import os
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
+import matplotlib.ticker as ticker  # 添加这个导入
 import scienceplots  # Assuming 'scienceplots' theme is installed
 
 plt.style.use(['science', 'nature'])
@@ -67,11 +68,20 @@ for idx, root in enumerate(roots):
         continue
 
     # Set labels and titles for each subplot
-    axes[idx].set_title(titles[idx],fontsize = 8)
+    axes[idx].set_title(titles[idx], fontsize=8)
     axes[idx].set_xlabel('Time (s)', fontsize=6)
     axes[idx].set_ylabel('Voltage (V)', fontsize=6)
     axes[idx].legend(legends, loc='upper right', bbox_to_anchor=(1, 1), frameon=False, ncol=3, fontsize=6)
     axes[idx].set_ylim([voltage_min - 0.1, voltage_max + 0.4])
+
+    # 添加千位分隔符格式化
+    axes[idx].xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
+    # 如果y轴也需要格式化，可以添加下面这行（保留一位小数）
+    # axes[idx].yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, p: f'{x:,.1f}'))
+
+    # 设置刻度标签字体大小
+    axes[idx].tick_params(axis='x', labelsize=6)
+    axes[idx].tick_params(axis='y', labelsize=6)
 
 plt.subplots_adjust(hspace=0.6, wspace=0.2)  # Adjust the spacing
 plt.show()
